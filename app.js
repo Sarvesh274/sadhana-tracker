@@ -20,33 +20,41 @@ const StatCard = ({ title, value, icon: Icon, color, subtitle, score }) => {
     return 'text-red-600';
   };
 
-  return (
-    <div className={`p-4 rounded-lg border ${colorClasses[color]} bg-opacity-50 relative`}>
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-gray-600">{title}</p>
-          <p className={`text-xl font-bold ${colorClasses[color].split(' ')[1]}`}>{value}</p>
-          {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
-        </div>
-        <Icon className={`w-8 h-8 ${colorClasses[color].split(' ')[1]}`} />
-      </div>
-      {score !== undefined && (
-        <div className={`absolute top-2 right-10 text-sm font-bold ${getScoreColor(score)}`}>
-          {score}%
-        </div>
-      )}
-    </div>
+  return React.createElement(
+    'div',
+    { className: `p-4 rounded-lg border ${colorClasses[color]} bg-opacity-50 relative` },
+    React.createElement(
+      'div',
+      { className: 'flex items-center justify-between' },
+      React.createElement(
+        'div',
+        null,
+        React.createElement('p', { className: 'text-sm font-medium text-gray-600' }, title),
+        React.createElement('p', { className: `text-xl font-bold ${colorClasses[color].split(' ')[1]}` }, value),
+        subtitle && React.createElement('p', { className: 'text-xs text-gray-500 mt-1' }, subtitle)
+      ),
+      React.createElement(Icon, { className: `w-8 h-8 ${colorClasses[color].split(' ')[1]}` })
+    ),
+    score !== undefined && React.createElement(
+      'div',
+      { className: `absolute top-2 right-10 text-sm font-bold ${getScoreColor(score)}` },
+      `${score}%`
+    )
   );
 };
 
 const SectionCard = ({ title, children, icon: Icon }) => (
-  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-    <div className="flex items-center gap-3 mb-4">
-      <Icon className="w-6 h-6 text-blue-600" />
-      <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-    </div>
-    {children}
-  </div>
+  React.createElement(
+    'div',
+    { className: 'bg-white rounded-xl shadow-sm border border-gray-200 p-6' },
+    React.createElement(
+      'div',
+      { className: 'flex items-center gap-3 mb-4' },
+      React.createElement(Icon, { className: 'w-6 h-6 text-blue-600' }),
+      React.createElement('h2', { className: 'text-lg font-semibold text-gray-900' }, title)
+    ),
+    children
+  )
 );
 
 const SadhanaTracker = () => {
@@ -780,4 +788,4 @@ Hare Krishna! 🙏`;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(SadhanaTracker));
+root.render(React.createElement(SadhanaTracker, null));
