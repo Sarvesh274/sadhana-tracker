@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadhana Tracker</title>
+
+  <!-- ✅ Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="bg-gray-50">
   <div id="root"></div>
-  <!-- Import app.js as a module -->
-  <script type="module" src="./app.js"></script>
+
+  <!-- ✅ Run app.js through Babel (NOT type=module) -->
+  <script type="text/babel" src="./app.js"></script>
 </body>
 </html>
