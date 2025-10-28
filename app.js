@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'https://esm.sh/react@18.2.0';
-import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
-import { Plus, Heart, Clock, BookOpen, Star, Sun, Moon, Coffee, Briefcase, Users, Music, Target, Share2, CheckCircle2 } from 'https://esm.sh/lucide-react@0.292.0';
+const { useState, useEffect } = React;
+const { Plus, Heart, Clock, BookOpen, Star, Sun, Moon, Coffee, Briefcase, Users, Music, Target, Share2, CheckCircle2 } = lucide;
 
 const StatCard = ({ title, value, icon: Icon, color, subtitle, score }) => {
   const colorClasses = {
@@ -780,7 +779,5 @@ Hare Krishna! 🙏`;
   );
 };
 
-export default SadhanaTracker;
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<SadhanaTracker />);
+root.render(React.createElement(SadhanaTracker));
